@@ -17,11 +17,11 @@ namespace CSGSI
     /// <summary>
     /// Full class to use CSGO's Game State Integration.
     ///  https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive_Game_State_Integration
-    /// See: http://pastebin.com/g3DdM7fL or http://pastebin.com/FLATE957 for all variables and their values.
+    /// See: http://pastebin.com/d6hsmV89 for all variables and their values.
     /// There are some processed values such as round timers/bomb timers.
     /// Always run the application with adminitrator rights, when debugging, run Visual Studio as administrator.
     ///  Get started: 
-    ///     - Add: http://pastebin.com/d18hNB6D to Counter-Strike Global Offensive\csgo\cfg\gamestate_integration_test.cfg
+    ///     - Add: http://pastebin.com/4MwDZ9Um to Counter-Strike Global Offensive\csgo\cfg\gamestate_integration_test.cfg
     ///     - Add: using CSGSI;
     ///  - Download Newtonsoft.Json from NuGet
     ///        - For event handeler: 

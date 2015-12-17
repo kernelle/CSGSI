@@ -22,3 +22,6 @@ C:\Users\Martijn\Dropbox\Desktop\2 ICA\Bored\CSGSI Test\CSGSI Test\obj\Debug\CSG
 C:\Users\Martijn\Dropbox\Desktop\2 ICA\Bored\CSGSI Test\CSGSI Test\obj\Debug\CSGSI_Test.Properties.Resources.resources
 C:\Users\Martijn\Dropbox\Desktop\2 ICA\Bored\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.csproj.GenerateResource.Cache
 E:\Dropbox\Desktop\2 ICA\Bored\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.csprojResolveAssemblyReference.cache
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\bin\Debug\CSGSI Test.exe.config
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.exe
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.pdb

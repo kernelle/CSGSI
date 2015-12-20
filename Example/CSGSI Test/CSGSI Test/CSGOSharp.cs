@@ -38,14 +38,19 @@ namespace CSGSI
         /// <summary>
         /// Used to start this service. Will return true if succesfull. Always run the application with adminitrator rights.
         /// </summary>
-        public static bool Start(int port)
+        /// <param name="host">Host to listen on.</param>
+        /// <param name="port">Port to listen on.</param>
+        /// <returns>Bool value if running.</returns>
+        public static bool Start(IPAddress host, int port)
         {
+            portNr = port;
+            hostNr = host;
+
             backgroundWorkerServer.WorkerSupportsCancellation = true;
             backgroundWorkerServer.DoWork += new DoWorkEventHandler(backgroundWorkerServer_DoWork);
             backgroundWorkerPlayers.WorkerSupportsCancellation = true;
             backgroundWorkerPlayers.DoWork += new DoWorkEventHandler(backgroundWorkerPlayer_DoWork);
-
-            portNr = port;
+            
             backgroundWorkerServer.RunWorkerAsync();
 
             timers.Add(new Timers());
@@ -131,7 +136,7 @@ namespace CSGSI
         /// </summary>
         public static string timeString = "";
         /// <summary>
-        /// Returns a printable version if you would need a kit to defuse.
+        /// Returns a printable version if you would need a kit to defuse. Now obsolete because of randomized 0.5s - 4s delay on bomb timer.
         /// </summary>
         public static string kitornot = "";
         /// <summary>
@@ -140,6 +145,7 @@ namespace CSGSI
         public static string dumpSelectedBuffer = "", dumpCurrentPLayer = "", dumpServerStats = "";
 
         private static int portNr = 3000;
+        private static IPAddress hostNr;
         private static string Sjson = "";
         private static double bufferTimeStamp = 0;
         private static bool playerdone = false, serverdone = false;
@@ -153,7 +159,7 @@ namespace CSGSI
         /// </summary>
         public static event NewGameStateHandler NewGameState;
 
-        private static void timerReplaced()
+        private static void processValues()
         {
             try { dumpSelectedBuffer = CSGOSharp.dumpPlayer(players[dumpPlayerIndex]); } catch (Exception) { }
 
@@ -283,7 +289,7 @@ namespace CSGSI
             Sjson = gs.JSON;
             JSON = JsonConvert.DeserializeObject<dynamic>(Sjson);
 
-            timerReplaced();
+            processValues();
 
             try
             {
@@ -305,7 +311,7 @@ namespace CSGSI
             serverdone = false;
             if (!GSIListener.Running)
             {
-                if (GSIListener.Start(portNr))
+                if (GSIListener.Start(hostNr, portNr))
                 {
                     GSIListener.NewGameState += new EventHandler(OnNewGameState);
                     // timer.Start();!timer.Enabled && 
@@ -318,6 +324,7 @@ namespace CSGSI
                 server = CSGOSharp.parseToServer(JSON);
                 dumpServerStats = "Timestamp: \r\n" + UnixTimeStampToDateTime(server.provider.timestamp)
                     + "\r\n" + server.provider.timestamp + "." + subtime + "\r\n"
+             + "\r\nGamemode: " + server.map.mode
             + "\r\nMap: " + server.map.name
             + "\r\nRound: " + (server.map.round + 1)
                 + "\r\nState: " + server.round.phase + " " + server.map.phase + " " + server.map.team_ct.score + " - " + server.map.team_t.score
@@ -844,13 +851,13 @@ namespace CSGSI
         /// </summary>
         /// <param name="port">The port to listen on</param>
         /// <returns>Returns true if the listener could be started, false otherwise</returns>
-        public static bool Start(int port)
+        public static bool Start(IPAddress host,int port)
         {
             if (!m_Running && UacHelper.IsProcessElevated)
             {
                 m_Port = port;
                 listener = new HttpListener();
-                listener.Prefixes.Add("http://127.0.0.1:" + port + "/");
+                listener.Prefixes.Add("http://"+host.ToString() +":"+ port + "/");
                 Thread listenerThread = new Thread(new ThreadStart(Run));
                 m_Running = true;
                 listenerThread.Start();

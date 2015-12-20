@@ -25,3 +25,11 @@ E:\Dropbox\Desktop\2 ICA\Bored\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.csproj
 E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\bin\Debug\CSGSI Test.exe.config
 E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.exe
 E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.pdb
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\bin\Debug\CSGSI Test.exe
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\bin\Debug\CSGSI Test.pdb
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\bin\Debug\Newtonsoft.Json.dll
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\bin\Debug\Newtonsoft.Json.xml
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.csprojResolveAssemblyReference.cache
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI_Test.Form1.resources
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI_Test.Properties.Resources.resources
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.csproj.GenerateResource.Cache

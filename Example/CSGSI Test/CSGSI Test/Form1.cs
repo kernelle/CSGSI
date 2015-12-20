@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
 using System.Runtime.InteropServices;
+using System.Net;
 using CSGSI;
 
 namespace CSGSI_Test
@@ -29,13 +30,15 @@ namespace CSGSI_Test
         public Form1()
         {
             InitializeComponent();
+
+            
             backgroundWorker1.RunWorkerAsync();
             timer.Start();
             
             CSGOSharp.NewGameState += new CSGOSharp.NewGameStateHandler(onNewgameState);
             
         }
-        static bool beep = false, beep10 = false;
+        static bool beep = true, beep10 = false;
         List<string> buffer = new List<string>();
             
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -62,6 +65,7 @@ namespace CSGSI_Test
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            // obsolete because of 0.5 - 4 sec delay on bomb timer
             if (CSGOSharp.planted)
             {
                 foreach (Timers item in CSGOSharp.timers)
@@ -73,7 +77,7 @@ namespace CSGSI_Test
                     }
                 }
                 try { progressBarTime.Value = CSGOSharp.sec; } catch (Exception) { }
-                if (CSGOSharp.sec  == 10 && !beep10)
+                if (CSGOSharp.sec  == 10 && !beep10 && false)
                 {
                     SystemSounds.Beep.Play();
                     beep10 = true;
@@ -159,7 +163,7 @@ namespace CSGSI_Test
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            CSGOSharp.Start(3000);
+            CSGOSharp.Start(IPAddress.Loopback,3000);
         }
 
         private void Form1_Load(object sender, EventArgs e)

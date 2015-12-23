@@ -399,6 +399,7 @@ namespace CSGSI
             Player player1 = new Player();
             try { player1.steamid = playerVar.steamid; } catch (Exception) { }
             try { player1.name = playerVar.name; } catch (Exception) { }
+            try { player1.clan = playerVar.clan; } catch (Exception) { }
             try { player1.team = playerVar.team; } catch (Exception) { }
             try { player1.activity = playerVar.activity; } catch (Exception) { }
 
@@ -479,6 +480,7 @@ namespace CSGSI
             //builder = "Specing player:\r\n";
             builder = "Steamid: " + player1.steamid.ToString(".#####################################################################################################################################################################################################################################################################################################################################");
             builder += "\r\nName: " + player1.name;
+            builder += "\r\nClan: " + player1.clan;
             builder += "\r\nTeam: " + player1.team;
             builder += "\r\nActivity: " + player1.activity;
             builder += "\r\nMatch stats: " + player1.match_stats.kills
@@ -546,6 +548,7 @@ namespace CSGSI
         public double steamid { get; set; }
         public string name { get; set; }
         public string team { get; set; }
+        public string clan { get; set; }
         public string activity { get; set; }
         public match_stats match_stats { get; set; }
         public state state { get; set; }

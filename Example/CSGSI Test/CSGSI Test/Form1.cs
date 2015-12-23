@@ -34,12 +34,13 @@ namespace CSGSI_Test
             
             backgroundWorker1.RunWorkerAsync();
             timer.Start();
-            
+            (new FormJSON(this)).Show();
             CSGOSharp.NewGameState += new CSGOSharp.NewGameStateHandler(onNewgameState);
             
         }
         static bool beep = true, beep10 = false;
         List<string> buffer = new List<string>();
+        public string JSONString = "";
             
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -113,7 +114,8 @@ namespace CSGSI_Test
             {
                 timerBeep_Tick(null, null);
             }
-            
+
+            JSONString = CSGOSharp.Sjson.ToString();
 
             label1.Text = CSGOSharp.dumpSelectedBuffer;
             label2.Text = CSGOSharp.dumpCurrentPLayer;

@@ -33,3 +33,4 @@ E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug
 E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI_Test.Form1.resources
 E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI_Test.Properties.Resources.resources
 E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI Test.csproj.GenerateResource.Cache
+E:\Dropbox\Desktop\2 ICA\Bored\CSGOSharp\Example\CSGSI Test\CSGSI Test\obj\Debug\CSGSI_Test.FormJSON.resources

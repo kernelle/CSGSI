@@ -88,7 +88,7 @@ namespace CSGSI
         /// <summary>
         /// Return JSON from server.
         /// </summary>
-        public static dynamic JSON = null;
+        public static string Sjson = "";
         /// <summary>
         /// List of all players available, while playing yourself this will be null.
         /// Always use in combination with bool listLoaded.
@@ -146,7 +146,7 @@ namespace CSGSI
 
         private static int portNr = 3000;
         private static IPAddress hostNr;
-        private static string Sjson = "";
+        private static dynamic JSON = null;
         private static double bufferTimeStamp = 0;
         private static bool playerdone = false, serverdone = false;
 
